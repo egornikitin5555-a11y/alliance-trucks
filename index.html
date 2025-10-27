@@ -1,280 +1,200 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Альянс Тракс — грузовики, запчасти, сервис</title>
-<meta name="description" content="Альянс Тракс — продажа и сервис грузовиков. Каталог, запчасти, быстрый заказ и гарантия качества." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Альянс Тракс — Надёжные грузовики и сервис</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background-color: #F8F9FA;
+      color: #2C3E50;
+      overflow: hidden;
+    }
 
-<!-- Цвета по твоему запросу -->
-<style>
-  :root{
-    --bg: #F8F9FA;            /* тёплый белый */
-    --dark: #2C3E50;          /* основной тёмно-серый */
-    --accent: #8B0000;        /* глубокий бордовый */
-    --accent-2: #34495E;      /* тёмно-синий акцент */
-    --muted: #BDC3C7;         /* металлический серый для иконок */
-    --card: #ffffff;
-    --radius: 10px;
-    --maxw: 1100px;
-  }
+    /* Заставка */
+    .intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom right, #2C3E50, #8B0000);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 1s ease-out;
+    }
 
-  /* Базовые стили */
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
-    background:var(--bg);
-    color:var(--dark);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.5;
-  }
-  a{color:var(--accent-2); text-decoration:none}
-  img{max-width:100%;display:block}
+    .truck {
+      position: relative;
+      width: 340px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
 
-  /* Контейнер */
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    .headlights {
+      position: absolute;
+      top: 42%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 50px;
+    }
 
-  /* Хедер */
-  header{
-    background:linear-gradient(180deg,var(--dark) 0%, #243242 100%);
-    color:#fff;
-    position:sticky;top:0;z-index:40;
-    box-shadow:0 3px 8px rgba(0,0,0,0.15);
-  }
-  .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;}
-  .brand{display:flex;align-items:center;gap:14px}
-  .brand img{height:44px;width:auto;border-radius:8px;background:#fff;padding:6px}
-  .brand h1{font-size:18px;margin:0;font-weight:600;letter-spacing:0.2px}
-  nav{display:flex;gap:18px;align-items:center}
-  nav a{color:rgba(255,255,255,0.9);padding:8px 6px;border-radius:6px}
-  nav a:hover{background:rgba(255,255,255,0.03)}
-  .cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;font-weight:600;border:2px solid rgba(255,255,255,0.06)}
-  .cta:hover{filter:brightness(0.95)}
+    .light {
+      width: 40px;
+      height: 20px;
+      background: radial-gradient(circle, #fffbe6 0%, rgba(255,255,255,0) 70%);
+      opacity: 0;
+      animation: blink 0.4s infinite alternate;
+    }
 
-  /* Hero */
-  .hero{
-    display:grid;
-    grid-template-columns:1fr 520px;
-    gap:30px;
-    align-items:center;
-    padding:48px 20px;
-  }
-  .hero-left h2{
-    font-size:46px;
-    margin:0 0 12px;
-    color:var(--dark);
-    line-height:1.05;
-  }
-  .hero-left p{color:#444;margin:0 0 22px;font-size:16px}
-  .hero-cta{display:flex;gap:12px}
-  .btn{padding:12px 18px;border-radius:10px;font-weight:600;cursor:pointer;border:0}
-  .btn-prim{background:var(--accent);color:#fff}
-  .btn-ghost{background:var(--accent-2);color:#fff;opacity:0.95}
-  .hero-right{border-radius:14px;overflow:hidden;background:linear-gradient(180deg, #ffffff, #f0f2f4)}
-  .hero-right img{display:block;width:100%;height:100%;object-fit:cover}
+    @keyframes blink {
+      0% { opacity: 0.1; }
+      100% { opacity: 1; }
+    }
 
-  /* Каталог */
-  .section{padding:36px 20px}
-  .section h3{font-size:28px;margin:0 0 18px}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(44,62,80,0.06);text-align:center}
-  .card img{height:160px;object-fit:cover;border-radius:8px}
-  .card h4{margin:12px 0 6px;font-size:18px;color:var(--dark)}
-  .card p{color:#666;font-size:14px;margin:0}
+    .logo {
+      color: #F8F9FA;
+      font-size: 26px;
+      margin-top: 20px;
+      letter-spacing: 2px;
+    }
 
-  /* О компании */
-  .about{display:flex;gap:22px;align-items:center;padding:28px;background:#ffffff;border-radius:12px;box-shadow:0 6px 18px rgba(44,62,80,0.04);margin-top:18px}
-  .about img{width:220px;border-radius:8px}
+    /* Контент */
+    .content {
+      opacity: 0;
+      transition: opacity 1.5s ease-in;
+      text-align: center;
+      padding-top: 100px;
+    }
 
-  /* Футер */
-  footer{padding:28px 20px;background:#f1f3f5;margin-top:24px;color:var(--dark)}
-  .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-  .small{font-size:14px;color:#555}
+    .content.show {
+      opacity: 1;
+    }
 
-  /* Адаптив */
-  @media (max-width:1000px){
-    .hero{grid-template-columns:1fr; padding:36px 18px}
-    .hero-right{order: -1}
-    .grid{grid-template-columns:repeat(2,1fr)}
-  }
-  @media (max-width:640px){
-    nav{display:none}
-    .brand h1{font-size:16px}
-    .grid{grid-template-columns:1fr}
-    .hero-left h2{font-size:32px}
-  }
+    header {
+      background-color: #2C3E50;
+      color: #F8F9FA;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
 
-  /* CTA float phone (mobile) */
-  .phone-fab{
-    position:fixed;right:18px;bottom:18px;background:var(--accent);color:#fff;padding:14px 16px;border-radius:999px;box-shadow:0 8px 24px rgba(139,0,0,0.2);z-index:80;font-weight:700
-  }
-</style>
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      font-weight: 500;
+    }
+
+    nav a {
+      color: #F8F9FA;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #8B0000;
+    }
+
+    .hero {
+      margin-top: 120px;
+      padding: 50px 20px;
+    }
+
+    .hero img {
+      max-width: 600px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #8B0000;
+    }
+
+    footer {
+      background-color: #2C3E50;
+      color: #F8F9FA;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- header -->
-<header role="banner">
-  <div class="topbar wrap">
-    <div class="brand" aria-label="Альянс Тракс">
-      <img src="assets/logo.png" alt="Логотип Альянс Тракс" />
-      <h1>Альянс Тракс</h1>
+  <!-- Заставка -->
+  <div class="intro" id="intro">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Shacman_X3000_tractor_truck.jpg" alt="Shacman" class="truck">
+    <div class="headlights">
+      <div class="light"></div>
+      <div class="light"></div>
     </div>
+    <div class="logo">Альянс Тракс</div>
+  </div>
 
-    <nav role="navigation" aria-label="Главное меню">
-      <a href="#home">Главная</a>
-      <a href="#catalog">Грузовики</a>
-      <a href="#parts">Запчасти</a>
-      <a href="#service">Сервис</a>
-      <a href="#about">О компании</a>
-      <a href="#contacts">Контакты</a>
+  <!-- Основной сайт -->
+  <header>
+    <nav>
+      <a href="#">Главная</a>
+      <a href="#">Грузовики</a>
+      <a href="#">Запчасти</a>
+      <a href="#">Сервис</a>
+      <a href="#">О компании</a>
+      <a href="#">Контакты</a>
     </nav>
+  </header>
 
-    <div style="display:flex;gap:12px;align-items:center">
-      <a class="cta" href="#contacts">Заказать звонок</a>
-    </div>
+  <div class="content" id="content">
+    <section class="hero">
+      <h1>Альянс Тракс</h1>
+      <p>Надёжные грузовики и сервис для вашего бизнеса</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Shacman_X3000_tractor_truck_in_Russia.jpg" alt="Грузовик Shacman">
+    </section>
+
+    <section>
+      <h2>Наши направления</h2>
+      <p>Продажа, обслуживание и поставка запчастей для тяжёлой техники Shacman.</p>
+    </section>
   </div>
-</header>
 
-<main id="home" aria-live="polite">
+  <footer>
+    © 2025 Альянс Тракс | Все права защищены
+  </footer>
 
-  <!-- HERO -->
-  <section class="hero wrap" role="region" aria-label="Главный блок">
-    <div class="hero-left">
-      <h2>Надёжные грузовики<br>и сервис для вашего бизнеса</h2>
-      <p>Поддержка, запчасти и обслуживание — всё в одном месте. Быстрое оформление и выдача за 1 рабочий день.</p>
-      <div class="hero-cta">
-        <a class="btn btn-prim" href="#catalog">Каталог грузовиков</a>
-        <a class="btn btn-ghost" href="#service">Сервис и обслуживание</a>
-      </div>
-    </div>
-    <div class="hero-right" aria-hidden="false">
-      <img src="assets/hero.jpg" alt="Грузовик Альянс Тракс" />
-    </div>
-  </section>
+  <!-- Аудио -->
+  <audio id="engineSound" src="engine-start.mp3"></audio>
+  <audio id="welcomeVoice" src="welcome-voice.mp3"></audio>
 
-  <!-- КАТАЛОГ -->
-  <section id="catalog" class="section wrap" aria-label="Каталог">
-    <h3>Каталог грузовиков</h3>
-    <div class="grid" role="list">
-      <article class="card" role="listitem" aria-labelledby="iso">
-        <img src="assets/truck-iso.jpg" alt="Изотермический грузовик" />
-        <h4 id="iso">Изотермический</h4>
-        <p>Комфортная разгрузка/погрузка, надёжная фурнитура.</p>
-      </article>
+  <script>
+    window.addEventListener("load", () => {
+      const engine = document.getElementById("engineSound");
+      const voice = document.getElementById("welcomeVoice");
+      const intro = document.getElementById("intro");
+      const content = document.getElementById("content");
 
-      <article class="card" role="listitem" aria-labelledby="fabric">
-        <img src="assets/truck-fabric.jpg" alt="Тканевый кузов" />
-        <h4 id="fabric">Тканевый салон</h4>
-        <p>Удобный салон, кондиционер, мультируль.</p>
-      </article>
+      // Проигрываем звуки
+      engine.play().catch(()=>{});
+      setTimeout(() => voice.play().catch(()=>{}), 1500);
 
-      <article class="card" role="listitem" aria-labelledby="diesel">
-        <img src="assets/truck-diesel.jpg" alt="Дизельный грузовик" />
-        <h4 id="diesel">Дизельный</h4>
-        <p>Мощный дизельный двигатель, экономичный расход.</p>
-      </article>
-    </div>
-
-    <!-- кнопка "все модели" -->
-    <div style="margin-top:18px;display:flex;gap:12px">
-      <a class="btn btn-prim" href="#catalog">Смотреть все модели</a>
-      <a class="btn btn-ghost" href="#contacts">Связаться с менеджером</a>
-    </div>
-  </section>
-
-  <!-- О КОМПАНИИ -->
-  <section id="about" class="section wrap" aria-label="О компании">
-    <h3>О компании</h3>
-    <div class="about">
-      <div>
-        <p class="small">Альянс Тракс — эксперт в поставках и обслуживании коммерческих грузовиков. Мы помогаем бизнесу подобрать технику, обеспечить запасными частями и организовать обслуживание с минимальными простоями.</p>
-        <ul style="color:#444;margin-top:12px">
-          <li><strong>Гарантия:</strong> сервисные решения и запасные части</li>
-          <li><strong>Оформление:</strong> быстрое выдача за 1 рабочий день</li>
-          <li><strong>Поддержка:</strong> консультирование и подбор техники под задачу</li>
-        </ul>
-      </div>
-      <img src="assets/truck-iso.jpg" alt="Грузовик в парке Альянс Тракс" />
-    </div>
-  </section>
-
-  <!-- СЕРВИС -->
-  <section id="service" class="section wrap" aria-label="Сервис">
-    <h3>Сервис и услуги</h3>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px">
-      <div style="flex:1;min-width:220px;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.05)">
-        <h4>Техническое обслуживание</h4>
-        <p class="small">Плановые ТО и диагностика двигателя — оперативно и с гарантией.</p>
-      </div>
-      <div style="flex:1;min-width:220px;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.05)">
-        <h4>Запчасти</h4>
-        <p class="small">Оригинальные и качественные аналоги в наличии. Поиск по VIN.</p>
-      </div>
-      <div style="flex:1;min-width:220px;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.05)">
-        <h4>Срочный ремонт</h4>
-        <p class="small">Срочные работы и выездная диагностика.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Контакты -->
-  <section id="contacts" class="section wrap" aria-label="Контакты">
-    <h3>Контакты</h3>
-    <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:12px">
-      <div style="flex:1;min-width:260px;background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04)">
-        <p><strong>Телефон:</strong> <a href="tel:+74951114444">+7 (495) 111-44-44</a></p>
-        <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 1</p>
-        <p><strong>Email:</strong> <a href="mailto:info@alliancetraks.ru">info@alliancetraks.ru</a></p>
-        <p style="margin-top:12px"><a class="btn btn-prim" href="mailto:info@alliancetraks.ru">Заказать звонок</a></p>
-      </div>
-
-      <div style="flex:2;min-width:300px;background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.04)">
-        <!-- Здесь можно вставить iframe карты (Google Maps / Yandex) -->
-        <div style="background:#e9ecef;height:180px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#7a7a7a">
-          Карта (вставьте iframe Яндекс/Google карты)
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- footer -->
-<footer aria-label="Подвал сайта">
-  <div class="wrap footer-grid">
-    <div>
-      <strong>Альянс Тракс</strong>
-      <div class="small" style="margin-top:8px">© <span id="year"></span> Все права защищены</div>
-    </div>
-    <div class="small">
-      <div>Тел: <a href="tel:+74951114444">+7 (495) 111-44-44</a></div>
-      <div>Email: <a href="mailto:info@alliancetraks.ru">info@alliancetraks.ru</a></div>
-    </div>
-  </div>
-</footer>
-
-<!-- Фиксированная кнопка звонка -->
-<a class="phone-fab" href="tel:+74951114444" aria-label="Заказать звонок">📞 Позвонить</a>
-
-<script>
-  // Текущий год в футер
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Небольшая плавная прокрутка при кликах по якорям
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      const href = a.getAttribute('href');
-      if(href.length>1){
-        e.preventDefault();
-        const el = document.querySelector(href);
-        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-      }
-    })
-  });
-</script>
-
+      // Убираем заставку
+      setTimeout(() => {
+        intro.style.opacity = "0";
+        setTimeout(() => {
+          intro.style.display = "none";
+          content.classList.add("show");
+          document.body.style.overflow = "auto";
+        }, 1000);
+      }, 4000);
+    });
+  </script>
 </body>
 </html>
