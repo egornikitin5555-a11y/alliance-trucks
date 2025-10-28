@@ -1,181 +1,561 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Альянс Тракс — Надёжные грузовики и сервис</title>
-<style>
-  body {
-    margin: 0;
-    font-family: "Segoe UI", sans-serif;
-    background-color: #F8F9FA;
-    color: #2C3E50;
-    overflow: hidden;
-  }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Альянс Тракс — Надёжные грузовики и сервис</title>
+    <meta name="description" content="Продажа новых и б/у грузовиков, запчасти, сервисное обслуживание. Надёжность для вашего бизнеса." />
 
-  /* Вступительная анимация */
-  #intro {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: #2C3E50;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: #F8F9FA;
-    z-index: 10;
-    transition: opacity 1s ease;
-  }
+    <!-- Google Fonts: Inter (минимализм + читаемость) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  #intro img {
-    width: 420px;
-    animation: blink 1s infinite alternate;
-  }
+    <!-- Favicon (замени на свой логотип в base64 или ссылку) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F8F9FA'/%3E%3Cpath d='M20 30 L50 50 L20 70 Z' fill='%232C3E50'/%3E%3Cpath d='M50 30 L80 50 L50 70 Z' fill='%238B0000'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23BDC3C7'/%3E%3C/svg%3E" type="image/svg+xml" />
 
-  @keyframes blink {
-    from { filter: brightness(0.8); }
-    to { filter: brightness(1.4); }
-  }
+    <style>
+        /* === ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ === */
+        :root {
+            --bg-main: #F8F9FA;           /* тёплый офф-вайт */
+            --text-primary: #2C3E50;      /* тёмно-серый (металл) */
+            --accent-burgundy: #8B0000;  /* глубокий бордовый */
+            --accent-navy: #34495E;      /* тёмно-синий (доверие) */
+            --metal-gray: #BDC3C7;       /* иконки, детали */
+            --border: #ddd;
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
 
-  #content {
-    opacity: 0;
-    transition: opacity 1s ease;
-  }
+        /* === СБРОС И БАЗОВЫЕ СТИЛИ === */
+        *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        button, input, select, textarea { font: inherit; }
 
-  #content.show {
-    opacity: 1;
-  }
+        /* === КОНТЕЙНЕР === */
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-  header {
-    background-color: #2C3E50;
-    color: #F8F9FA;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-  }
+        /* === ХЕДЕР === */
+        header {
+            background: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+        .logo svg { width: 48px; height: 48px; }
+        .logo-text { font-size: 1.4rem; }
 
-  header h1 {
-    font-size: 1.8em;
-    color: #8B0000;
-  }
+        /* Поиск + кнопка звонка */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .search-form {
+            position: relative;
+        }
+        .search-form input {
+            padding: 0.6rem 2.5rem 0.6rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            width: 260px;
+            background: #fff;
+            transition: var(--transition);
+        }
+        .search-form input:focus {
+            outline: none;
+            border-color: var(--accent-navy);
+            box-shadow: 0 0 0 3px rgba(52,73,94,0.15);
+        }
+        .search-form button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--accent-navy);
+        }
 
-  nav a {
-    color: #F8F9FA;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: 500;
-  }
+        .btn-call {
+            background: var(--accent-burgundy);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+        .btn-call:hover { background: #6d0000; }
 
-  nav a:hover {
-    color: #BDC3C7;
-  }
+        /* Навигация */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            font-weight: 500;
+            color: var(--text-primary);
+            position: relative;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        nav a:hover { color: var(--accent-burgundy); }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-burgundy);
+            transition: var(--transition);
+        }
+        nav a:hover::after { width: 100%; }
 
-  .hero {
-    background: url('https://images.unsplash.com/photo-1616788970761-2a835d80c894?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: #F8F9FA;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-  }
+        /* Иконки в меню */
+        .icon-truck { width: 18px; height: 18px; fill: currentColor; }
 
-  .hero h2 {
-    font-size: 2.4em;
-    margin-bottom: 10px;
-  }
+        /* Дропдауны */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            min-width: 220px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: var(--radius);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-content a {
+            padding: 0.8rem 1rem;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .dropdown-content a:hover {
+            background: rgba(139,0,0,0.05);
+            color: var(--accent-burgundy);
+        }
+        .dropdown-content a:last-child { border-bottom: none; }
 
-  .hero p {
-    font-size: 1.2em;
-    margin-bottom: 25px;
-  }
+        /* === ГЕРОЙ-СЕКЦИЯ (СЛАЙДЕР) === */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            overflow: hidden;
+            background: linear-gradient(rgba(44,62,80,0.7), rgba(44,62,80,0.7)), url('https://images.unsplash.com/photo-1591801629796-3cd2c7633153?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        .btn-primary {
+            background: var(--accent-burgundy);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: var(--transition);
+        }
+        .btn-primary:hover { background: #6d0000; transform: translateY(-2px); }
 
-  .hero button {
-    background-color: #8B0000;
-    color: #F8F9FA;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1em;
-    border-radius: 8px;
-    cursor: pointer;
-  }
+        /* Быстрый поиск деталей */
+        .quick-search {
+            margin-top: 2rem;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+        .quick-search input {
+            padding: 0.8rem 1rem;
+            width: 300px;
+            border: none;
+            border-radius: var(--radius) 0 0 var(--radius);
+            font-size: 1rem;
+        }
+        .quick-search button {
+            padding: 0.8rem 1.5rem;
+            background: var(--accent-burgundy);
+            color: #fff;
+            border: none;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            cursor: pointer;
+            font-weight: 600;
+        }
 
-  .hero button:hover {
-    background-color: #A93226;
-  }
+        /* === РАЗДЕЛЫ (КАРТОЧКИ) === */
+        .sections {
+            padding: 5rem 0;
+            background: #fff;
+        }
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: #fff;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 1.5rem;
+        }
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+        .card p {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        .card a {
+            color: var(--accent-burgundy);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
 
-  footer {
-    background-color: #2C3E50;
-    color: #BDC3C7;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
-  }
-</style>
+        /* === ФУТЕР === */
+        footer {
+            background: var(--text-primary);
+            color: #ddd;
+            padding: 4rem 0 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .footer-col a {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: #bbb;
+            transition: var(--transition);
+        }
+        .footer-col a:hover {
+            color: var(--accent-burgundy);
+        }
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* === ТЁМНАЯ ТЕМА === */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-main: #1a1a1a;
+                --text-primary: #e0e0e0;
+                --border: #333;
+            }
+            body { background: var(--bg-main); color: var(--text-primary); }
+            .card, .dropdown-content, .quick-search { background: #222; }
+            .card { border-color: #333; }
+            header { background: rgba(26,26,26,0.95); border-bottom-color: #333; }
+            .search-form input { background: #333; color: #fff; border-color: #444; }
+        }
+
+        /* === АДАПТИВ === */
+        @media (max-width: 992px) {
+            .header-inner { flex-direction: column; align-items: stretch; }
+            nav ul { justify-content: center; gap: 1.5rem; }
+            .hero h1 { font-size: 2.4rem; }
+        }
+        @media (max-width: 768px) {
+            .search-form input { width: 200px; }
+            .hero { height: 70vh; }
+            .hero h1 { font-size: 2rem; }
+            .quick-search input { width: 100%; border-radius: var(--radius); }
+            .quick-search button { width: 100%; border-radius: var(--radius); margin-top: 0.5rem; }
+        }
+        @media (max-width: 576px) {
+            nav ul { flex-direction: column; text-align: center; }
+            .header-actions { justify-content: center; }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Вступление -->
-  <div id="intro">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Shacman_X3000_6x4_Tractor_Truck.jpg" alt="Shacman">
-    <h2>Альянс Тракс</h2>
-  </div>
 
-  <!-- Основное содержимое -->
-  <div id="content">
+    <!-- ХЕДЕР -->
     <header>
-      <h1>Альянс Тракс</h1>
-      <nav>
-        <a href="#">Главная</a>
-        <a href="#">Грузовики</a>
-        <a href="#">Запчасти</a>
-        <a href="#">Сервис</a>
-        <a href="#">О компании</a>
-        <a href="#">Контакты</a>
-      </nav>
+        <div class="container header-inner">
+            <!-- Логотип -->
+            <a href="#" class="logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" fill="#F8F9FA"/>
+                    <path d="M20 30 L50 50 L20 70 Z" fill="#2C3E50"/>
+                    <path d="M50 30 L80 50 L50 70 Z" fill="#8B0000"/>
+                    <circle cx="50" cy="50" r="15" fill="#BDC3C7"/>
+                </svg>
+                <span class="logo-text">Альянс Тракс</span>
+            </a>
+
+            <!-- Поиск + кнопка -->
+            <div class="header-actions">
+                <form class="search-form">
+                    <input type="text" placeholder="Поиск по VIN, артикулу..." aria-label="Поиск">
+                    <button type="submit" aria-label="Найти">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                    </button>
+                </form>
+                <button class="btn-call" onclick="openCallModal()">Заказать звонок</button>
+            </div>
+
+            <!-- Навигация -->
+            <nav>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Каталог <svg class="icon-truck" viewBox="0 0 24 24"><path fill="currentColor" d="M18 18.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zm-12 0c.83 0 1.5-.67 1.5-1.5S6.83 15.5 6 15.5 4.5 16.17 4.5 17 5.17 18.5 6 18.5zm13.5-9-6.5 5h-3l-2-5H5v9h1c0 1.66 1.34 3 3 3s3-1.34 3-3h4c0 1.66 1.34 3 3 3s3-1.34 3-3h1v-6l-3-6zM8 6h9v3H8V6z"/></svg></a>
+                        <div class="dropdown-content">
+                            <a href="#">Новые грузовики</a>
+                            <a href="#">Б/У грузовики</a>
+                            <a href="#">Запчасти</a>
+                            <a href="#">Аксессуары</a>
+                        </div>
+                    </li>
+
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Сервис</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Войти</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
+    <!-- ГЕРОЙ -->
     <section class="hero">
-      <h2>Надёжные грузовики и сервис для вашего бизнеса</h2>
-      <p>Грузовики SHACMAN, ремонт и запчасти — всё в одном месте</p>
-      <button>Каталог</button>
+        <div class="container hero-content">
+            <h1>Надёжные грузовики и сервис для вашего бизнеса</h1>
+            <p>От поставки техники до полного цикла обслуживания — всё в одном месте.</p>
+            <a href="#" class="btn-primary">Посмотреть каталог</a>
+
+            <div class="quick-search">
+                <input type="text" placeholder="Поиск запчастей по VIN или артикулу...">
+                <button>Найти</button>
+            </div>
+        </div>
     </section>
 
+    <!-- РАЗДЕЛЫ -->
+    <section class="sections">
+        <div class="container">
+            <div class="section-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1581092580490-4d1ced9b5175?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Грузовики">
+                    <div class="card-body">
+                        <h3>Грузовики</h3 P>
+                        <p>Новые и б/у модели от ведущих производителей. Фильтры по марке, цене, году.</p>
+                        <a href="#">Перейти →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Запчасти">
+                    <div class="card-body">
+                        <h3>Запчасти</h3>
+                        <p>Оригинальные и аналоговые детали. Поиск по VIN, двигателю, шасси.</p>
+                        <a href="#">В магазин →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1581092580490-4d1ce4d9b5175?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Сервис">
+                    <div class="card-body">
+                        <h3>Сервис</h3>
+                        <p>ТО, диагностика, ремонт. Онлайн-запись и прозрачные цены.</p>
+                        <a href="#">Записаться →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="О компании">
+                    <div class="card-body">
+                        <h3>О компании</h3>
+                        <p>Мы — эксперты в тяжёлой технике. 15+ лет на рынке.</p>
+                        <a href="#">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
     <footer>
-      <p>© 2025 Альянс Тракс | Надёжность в движении</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Альянс Тракс</h4>
+                    <p>Надёжность. Мощь. Движение вперед.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Каталог</h4>
+                    <a href="#">Грузовики</a>
+                    <a href="#">Запчасти</a>
+                    <a href="#">Сервис</a>
+                    <a href="#">Акции</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <a href="#">О компании</a>
+                    <a href="#">Блог</a>
+                    <a href="#">Доставка</a>
+                    <a href="#">Гарантия</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <a href="tel:+78001234567">8 (800) 123-45-67</a>
+                    <a href="mailto:info@allianz-trucks.ru">info@allianz-trucks.ru</a>
+                    <a href="#">Telegram-чат</a>
+                    <a href="#">Москва, ул. Промышленная, 10</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Альянс Тракс. Все права защищены. 
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
     </footer>
-  </div>
 
-  <!-- Звуки -->
-  <audio id="engineSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b944ea28.mp3?filename=truck-engine-start-14247.mp3"></audio>
-  <audio id="welcomeVoice" src="https://cdn.pixabay.com/download/audio/2023/05/17/audio_2c2404eb0b.mp3?filename=female-voice-welcome-to-website-146856.mp3"></audio>
+    <!-- ГОЛОСОВОЕ ПРИВЕТСТВИЕ (с открытого источника) -->
+    <script>
+        // Голос из Web Speech API (русский, женский, мягкий деловой тон)
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance('Добро пожаловать в Альянс Тракс. Надёжные грузовики и сервис для вашего бизнеса.');
+            utterance.lang = 'ru-RU';
+            utterance.rate = 0.9;
+            utterance.pitch = 1.1;
+            utterance.volume = 0.8;
 
-  <script>
-    window.addEventListener("load", () => {
-      const engine = document.getElementById("engineSound");
-      const voice = document.getElementById("welcomeVoice");
-      const intro = document.getElementById("intro");
-      const content = document.getElementById("content");
+            // Попытка выбрать женский голос
+            const voices = speechSynthesis.getVoices();
+            const femaleVoice = voices.find(v => v.lang.startsWith('ru') && v.name.includes('Google') && !v.name.includes('Male')) 
+                             || voices.find(v => v.lang.startsWith('ru'));
+            if (femaleVoice) utterance.voice = femaleVoice;
 
-      // Запускаем звук и анимацию
-      engine.play().catch(()=>{});
-      setTimeout(() => {
-        voice.play().catch(()=>{});
-      }, 1500);
+            // Произносим при загрузке (с задержкой для мобильных)
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    speechSynthesis.speak(utterance);
+                }, 1000);
+            });
+        }
 
-      // Плавный переход
-      setTimeout(() => {
-        intro.style.opacity = "0";
-        setTimeout(() => {
-          intro.style.display = "none";
-          content.classList.add("show");
-          document.body.style.overflow = "auto";
-        }, 1000);
-      }, 4000);
-    });
-  </script>
+        // Модалка "Заказать звонок"
+        function openCallModal() {
+            const name = prompt("Ваше имя:");
+            const phone = prompt("Ваш телефон:");
+            if (name && phone) {
+                alert(`Спасибо, ${name}! Мы перезвоним на ${phone} в течение 15 минут.`);
+            }
+        }
+    </script>
+
 </body>
 </html>
