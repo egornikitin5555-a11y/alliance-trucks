@@ -1,4 +1,2162 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Русь-Строй - профессиональные строительные работы с 15-летним опытом. Бетонные работы, демонтаж, отделка, уборка объектов.">
+    <title>Русь-Строй | Профессиональные строительные работы - 15 лет опыта</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colors */
+            --primary: #FFC107;
+            --primary-dark: #E6AD06;
+            --text-primary: #212529;
+            --text-secondary: #6C757D;
+            --bg-page: #F8F9FA;
+            --bg-surface: #FFFFFF;
+            --border: #DEE2E6;
+            --success: #198754;
+            --error: #DC3545;
+            
+            /* Spacing */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-xxl: 96px;
+            
+            /* Typography */
+            --font-heading: 'Manrope', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* Shadows */
+            --shadow-card: 0px 8px 24px rgba(33, 37, 41, 0.08);
+            --shadow-button: 0px 4px 12px rgba(255, 193, 7, 0.25);
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-page);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 64px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 40px;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: var(--space-sm) 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .header-contacts {
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            height: 600px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%), 
+                        url('images/i.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--space-md);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            margin-bottom: var(--space-xl);
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--text-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            box-shadow: var(--shadow-button);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--text-primary);
+        }
+
+        /* Section */
+        section {
+            padding: var(--space-xxl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 20px;
+            margin-top: var(--space-sm);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .service-card {
+            background: var(--bg-surface);
+            padding: var(--space-lg);
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 16px 32px rgba(33, 37, 41, 0.12);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+        }
+
+        .service-card h3 {
+            margin-bottom: var(--space-sm);
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: var(--space-sm);
+        }
+
+        .service-list li {
+            padding: var(--space-xs) 0;
+            color: var(--text-secondary);
+            font-size: 15px;
+            display: flex;
+            align-items: start;
+            gap: var(--space-xs);
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Advantages */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .advantage-item {
+            background: var(--bg-surface);
+            padding: var(--space-md);
+            border-radius: 12px;
+            display: flex;
+            align-items: start;
+            gap: var(--space-sm);
+            box-shadow: var(--shadow-card);
+        }
+
+        .advantage-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            color: var(--primary);
+        }
+
+        .advantage-text h4 {
+            font-size: 18px;
+            margin-bottom: var(--space-xs);
+        }
+
+        .advantage-text p {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            position: relative;
+        }
+
+        .step {
+            background: var(--bg-surface);
+            padding: var(--space-md);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            position: relative;
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            color: var(--text-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto var(--space-sm);
+        }
+
+        .step h4 {
+            margin-bottom: var(--space-xs);
+            font-size: 18px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Calculator */
+        .calculator {
+            background: var(--bg-surface);
+            border-radius: 12px;
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-card);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+        }
+
+        .calculator-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: var(--space-sm);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: var(--font-body);
+            height: 56px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+        }
+
+        .calculator-result {
+            background: var(--bg-page);
+            border-radius: 8px;
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .result-label {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .result-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .result-note {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .stat-card {
+            background: var(--bg-surface);
+            padding: var(--space-lg);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            background: var(--border);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(33, 37, 41, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: var(--space-md);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            z-index: 1;
+        }
+
+        .gallery-item:hover .gallery-info {
+            transform: translateY(0);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .testimonial-card {
+            background: var(--bg-surface);
+            padding: var(--space-lg);
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .author-info h5 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-surface);
+            padding: var(--space-xl);
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-form textarea {
+            padding: var(--space-sm);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: var(--font-body);
+            min-height: 120px;
+            resize: vertical;
+            transition: all 0.3s;
+        }
+
+        .contact-form textarea:focus {
+            outline: none;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+        }
+
+        .form-consent {
+            display: flex;
+            gap: var(--space-xs);
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: var(--space-sm);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: var(--space-xl) 0 var(--space-md);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-section h4 {
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+            font-size: 20px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 16px;
+            line-height: 1.8;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-md);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        /* Floating Button */
+        .floating-btn {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-button);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .hero {
+                height: 500px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .calculator {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 64px 0;
+            }
+
+            .header-contacts {
+                display: none;
+            }
+
+            .services-grid,
+            .advantages-grid,
+            .process-steps,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Success Message */
+        .success-message {
+            background: var(--success);
+            color: white;
+            padding: var(--space-sm);
+            border-radius: 8px;
+            text-align: center;
+            margin-top: var(--space-sm);
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Certificates Section */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .certificate-item {
+            background: var(--bg-surface);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 16px 32px rgba(33, 37, 41, 0.12);
+        }
+
+        .certificate-preview {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .certificate-info {
+            padding: var(--space-md);
+        }
+
+        .certificate-info h4 {
+            font-size: 18px;
+            margin-bottom: var(--space-xs);
+            color: var(--text-primary);
+        }
+
+        .certificate-info p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Modal Window */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: var(--space-lg);
+            width: 90%;
+            max-width: 800px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bg-surface);
+            border-radius: 12px;
+            animation: slideIn 0.3s ease-in-out;
+        }
+
+        .modal-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: var(--space-md);
+        }
+
+        .modal-info h3 {
+            margin-bottom: var(--space-xs);
+        }
+
+        .modal-info p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: flex-end;
+        }
+
+        .close {
+            position: absolute;
+            top: var(--space-sm);
+            right: var(--space-sm);
+            color: var(--text-secondary);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--bg-page);
+        }
+
+        .close:hover {
+            color: var(--text-primary);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50%) scale(0.8); opacity: 0; }
+            to { transform: translateY(-50%) scale(1); opacity: 1; }
+        }
+
+        /* Equipment Section */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .equipment-card {
+            background: var(--bg-surface);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 12px 24px rgba(33, 37, 41, 0.1);
+        }
+
+        .equipment-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        .equipment-info {
+            padding: var(--space-md);
+        }
+
+        .equipment-info h4 {
+            font-size: 18px;
+            margin-bottom: var(--space-xs);
+        }
+
+        .equipment-info p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: var(--space-xs);
+        }
+
+        .equipment-specs {
+            display: flex;
+            gap: var(--space-sm);
+            font-size: 12px;
+        }
+
+        .spec-tag {
+            background: var(--bg-page);
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+
+        /* Messenger Buttons */
+        .messenger-buttons {
+            position: fixed;
+            bottom: var(--space-xl);
+            left: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            z-index: 999;
+        }
+
+        .messenger-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm);
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s;
+        }
+
+        .messenger-btn.telegram {
+            background: #0088cc;
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+        }
+
+        .messenger-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+
+        .messenger-btn.telegram:hover {
+            box-shadow: 0 6px 16px rgba(0, 136, 204, 0.4);
+        }
+
+        /* Enhanced Calculator */
+        .calculator-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        .form-row {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .enhanced-fields {
+            display: none;
+            background: var(--bg-page);
+            padding: var(--space-md);
+            border-radius: 8px;
+            margin-top: var(--space-sm);
+        }
+
+        .enhanced-fields.show {
+            display: block;
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-sm);
+        }
+
+        .field-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .field-group label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .field-group select {
+            padding: var(--space-xs) var(--space-sm);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: var(--font-body);
+            height: 48px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Русь<span>-Строй</span></a>
+                <div class="header-contacts">
+                    <a href="tel:+78001234567" class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        8 (800) 123-45-67
+                    </a>
+                    <a href="/cdn-cgi/l/email-protection#21484f474e615354520c5255534e580f5354" class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span class="__cf_email__" data-cfemail="3d54535b527d4f484e104e494f5244134f48">[email&#160;protected]</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Русь-Строй: 15 лет строим<br>надежное будущее</h1>
+                <p class="hero-subtitle">Бетонные работы • Демонтаж • Черновая и чистовая отделка • Уборка объектов</p>
+                <div class="hero-buttons">
+                    <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
+                    <a href="#projects" class="btn btn-outline">Смотреть проекты</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши услуги</h2>
+                <p class="section-subtitle">Полный спектр строительных работ под ключ</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Бетонные работы -->
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="8" y="24" width="48" height="32" rx="2"/>
+                        <path d="M16 24V16a8 8 0 0116 0v8M40 24V16a8 8 0 0116 0v8"/>
+                        <line x1="8" y1="36" x2="56" y2="36"/>
+                        <line x1="8" y1="48" x2="56" y2="48"/>
+                    </svg>
+                    <h3>Бетонные работы</h3>
+                    <p>Профессиональная заливка бетона любой сложности с соблюдением всех норм ГОСТ</p>
+                    <ul class="service-list">
+                        <li>Заливка фундаментов</li>
+                        <li>Бетонные стяжки полов</li>
+                        <li>Монолитное строительство</li>
+                        <li>Армирование конструкций</li>
+                    </ul>
+                </div>
+
+                <!-- Демонтажные работы -->
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M32 8L8 20v24l24 12 24-12V20L32 8z"/>
+                        <line x1="24" y1="28" x2="40" y2="28"/>
+                        <line x1="24" y1="36" x2="40" y2="36"/>
+                        <path d="M32 20v24"/>
+                    </svg>
+                    <h3>Демонтажные работы</h3>
+                    <p>Безопасный демонтаж конструкций с вывозом строительного мусора</p>
+                    <ul class="service-list">
+                        <li>Демонтаж стен и перегородок</li>
+                        <li>Снос зданий и сооружений</li>
+                        <li>Демонтаж фундаментов</li>
+                        <li>Вывоз строительного мусора</li>
+                    </ul>
+                </div>
+
+                <!-- Черновая отделка -->
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="12" y="12" width="40" height="40" rx="2"/>
+                        <line x1="12" y1="24" x2="52" y2="24"/>
+                        <line x1="12" y1="36" x2="52" y2="36"/>
+                        <line x1="24" y1="12" x2="24" y2="52"/>
+                        <line x1="40" y1="12" x2="40" y2="52"/>
+                    </svg>
+                    <h3>Черновая отделка</h3>
+                    <p>Качественная подготовка помещений для финишной отделки</p>
+                    <ul class="service-list">
+                        <li>Штукатурка стен машинным способом</li>
+                        <li>Выравнивание потолков</li>
+                        <li>Стяжка полов</li>
+                        <li>Монтаж перегородок</li>
+                    </ul>
+                </div>
+
+                <!-- Чистовая отделка -->
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="8" y="8" width="48" height="48" rx="4"/>
+                        <path d="M20 20h24v24H20z"/>
+                        <circle cx="32" cy="32" r="6"/>
+                    </svg>
+                    <h3>Чистовая отделка</h3>
+                    <p>Финишная отделка премиум-качества с вниманием к деталям</p>
+                    <ul class="service-list">
+                        <li>Покраска и поклейка обоев</li>
+                        <li>Укладка напольных покрытий</li>
+                        <li>Монтаж натяжных потолков</li>
+                        <li>Установка дверей</li>
+                    </ul>
+                </div>
+
+                <!-- Уборка объектов -->
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="32" cy="20" r="12"/>
+                        <path d="M44 32c0-6.627-5.373-12-12-12s-12 5.373-12 12"/>
+                        <path d="M16 44h32v8H16z"/>
+                        <line x1="24" y1="36" x2="24" y2="52"/>
+                        <line x1="40" y1="36" x2="40" y2="52"/>
+                    </svg>
+                    <h3>Уборка строительных объектов</h3>
+                    <p>Профессиональная послестроительная уборка любой сложности</p>
+                    <ul class="service-list">
+                        <li>Уборка после ремонта</li>
+                        <li>Генеральная уборка объектов</li>
+                        <li>Мойка окон и фасадов</li>
+                        <li>Уборка территории</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Почему выбирают нас</h2>
+                <p class="section-subtitle">Гарантия качества и надежности</p>
+            </div>
+
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <svg class="advantage-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M24 4L6 14v14c0 11 8 21 18 26 10-5 18-15 18-26V14L24 4z"/>
+                        <polyline points="16,24 22,30 34,18"/>
+                    </svg>
+                    <div class="advantage-text">
+                        <h4>15 лет на рынке</h4>
+                        <p>Проверенный опыт и сотни довольных клиентов</p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <svg class="advantage-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="24" cy="12" r="8"/>
+                        <path d="M8 40v-4c0-6 8-10 16-10s16 4 16 10v4"/>
+                    </svg>
+                    <div class="advantage-text">
+                        <h4>Квалифицированные специалисты</h4>
+                        <p>Опыт каждого мастера от 5 лет</p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <svg class="advantage-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="24" cy="24" r="20"/>
+                        <polyline points="24,8 24,24 32,32"/>
+                    </svg>
+                    <div class="advantage-text">
+                        <h4>Соблюдение сроков</h4>
+                        <p>Выполнение работ точно в установленные сроки</p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <svg class="advantage-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="8" y="12" width="32" height="28" rx="2"/>
+                        <path d="M8 20h32"/>
+                        <circle cx="16" cy="16" r="1" fill="currentColor"/>
+                    </svg>
+                    <div class="advantage-text">
+                        <h4>Фиксированные цены</h4>
+                        <p>Стоимость не меняется в процессе работы</p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <svg class="advantage-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M40 8H8L4 24l20 16 20-16L40 8z"/>
+                        <polyline points="18,20 22,24 30,16"/>
+                    </svg>
+                    <div class="advantage-text">
+                        <h4>Гарантия качества</h4>
+                        <p>Гарантия на все виды выполненных работ</p>
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <svg class="advantage-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="4" y="8" width="40" height="32" rx="2"/>
+                        <path d="M4 16h40"/>
+                        <rect x="12" y="24" width="8" height="8" rx="1"/>
+                    </svg>
+                    <div class="advantage-text">
+                        <h4>Собственная техника</h4>
+                        <p>Современное оборудование и инструменты</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work -->
+    <section id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Как мы работаем</h2>
+                <p class="section-subtitle">Простой и прозрачный процесс сотрудничества</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Заявка</h4>
+                    <p>Оставьте заявку по телефону, email или через форму на сайте</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Выезд специалиста</h4>
+                    <p>Бесплатный выезд для оценки объема работ</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Расчет стоимости</h4>
+                    <p>Подробная смета с фиксированной ценой</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Договор</h4>
+                    <p>Подписание договора с гарантиями</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h4>Выполнение работ</h4>
+                    <p>Работы строго по технологии и срокам</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h4>Сдача объекта</h4>
+                    <p>Приемка работ и начало гарантии</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section id="calculator" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Калькулятор стоимости</h2>
+                <p class="section-subtitle">Рассчитайте примерную стоимость работ онлайн</p>
+            </div>
+
+            <div class="calculator">
+                <form class="calculator-form" id="calcForm">
+                    <div class="form-group">
+                        <label for="serviceType">Тип услуги</label>
+                        <select id="serviceType" required onchange="showEnhancedFields()">
+                            <option value="">Выберите услугу</option>
+                            <option value="6500">Бетонные работы (от 6 500 ₽/м³)</option>
+                            <option value="1500">Демонтажные работы (от 1 500 ₽/м³)</option>
+                            <option value="400">Черновая отделка (от 400 ₽/м²)</option>
+                            <option value="800">Чистовая отделка (от 800 ₽/м²)</option>
+                            <option value="150">Уборка объектов (от 150 ₽/м²)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Площадь/объем</label>
+                        <input type="number" id="area" placeholder="Введите площадь или объем" min="1" required>
+                    </div>
+
+                    <!-- Enhanced fields for Concrete Works -->
+                    <div id="concreteFields" class="enhanced-fields">
+                        <h4 style="margin-bottom: 12px; font-size: 16px;">Детали для бетонных работ:</h4>
+                        <div class="form-row">
+                            <div class="field-group" style="flex: 1;">
+                                <label>Тип фундамента:</label>
+                                <select id="foundationType">
+                                    <option value="1">Ленточный</option>
+                                    <option value="1.2">Монолитный плитный</option>
+                                    <option value="1.1">Столбчатый</option>
+                                    <option value="1.3">Свайный</option>
+                                </select>
+                            </div>
+                            <div class="field-group" style="flex: 1;">
+                                <label>Марка бетона:</label>
+                                <select id="concreteGrade">
+                                    <option value="1">М200</option>
+                                    <option value="1.2">М300</option>
+                                    <option value="1.4">М400</option>
+                                    <option value="1.6">М500</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label>Армирование:</label>
+                            <select id="reinforcement">
+                                <option value="1">Стандартное</option>
+                                <option value="1.3">Усиленное</option>
+                                <option value="1.5">Профессиональное</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced fields for Demolition Works -->
+                    <div id="demolitionFields" class="enhanced-fields">
+                        <h4 style="margin-bottom: 12px; font-size: 16px;">Детали для демонтажных работ:</h4>
+                        <div class="form-row">
+                            <div class="field-group" style="flex: 1;">
+                                <label>Тип конструкции:</label>
+                                <select id="demolitionType">
+                                    <option value="1">Кирпичные стены</option>
+                                    <option value="1.2">Бетонные конструкции</option>
+                                    <option value="0.8">Деревянные перегородки</option>
+                                    <option value="1.5">Монолитный бетон</option>
+                                </select>
+                            </div>
+                            <div class="field-group" style="flex: 1;">
+                                <label>Этажность:</label>
+                                <select id="buildingFloors">
+                                    <option value="1">1-2 этажа</option>
+                                    <option value="1.2">3-5 этажей</option>
+                                    <option value="1.4">6+ этажей</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label>Вывоз мусора:</label>
+                            <select id="wasteRemoval">
+                                <option value="1">Самовывоз</option>
+                                <option value="1.3">С вывозом на полигон</option>
+                                <option value="1.5">С вывозом и утилизацией</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced fields for Rough Finishing -->
+                    <div id="roughFields" class="enhanced-fields">
+                        <h4 style="margin-bottom: 12px; font-size: 16px;">Детали для черновой отделки:</h4>
+                        <div class="form-row">
+                            <div class="field-group" style="flex: 1;">
+                                <label>Тип работ:</label>
+                                <select id="roughType">
+                                    <option value="1">Штукатурка стен</option>
+                                    <option value="1.2">Стяжка пола</option>
+                                    <option value="0.8">Выравнивание потолка</option>
+                                    <option value="1.3">Комплексные работы</option>
+                                </select>
+                            </div>
+                            <div class="field-group" style="flex: 1;">
+                                <label>Способ:</label>
+                                <select id="roughMethod">
+                                    <option value="1">Ручной</option>
+                                    <option value="0.8">Машинный</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label>Состояние поверхности:</label>
+                            <select id="surfaceCondition">
+                                <option value="1">Хорошее состояние</option>
+                                <option value="1.4">Требует ремонта</option>
+                                <option value="1.6">Сложные неровности</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced fields for Clean Finishing -->
+                    <div id="cleanFields" class="enhanced-fields">
+                        <h4 style="margin-bottom: 12px; font-size: 16px;">Детали для чистовой отделки:</h4>
+                        <div class="form-row">
+                            <div class="field-group" style="flex: 1;">
+                                <label>Вид работ:</label>
+                                <select id="cleanType">
+                                    <option value="1">Покраска стен</option>
+                                    <option value="1.2">Обои</option>
+                                    <option value="1.4">Плитка</option>
+                                    <option value="1.6">Комплексная отделка</option>
+                                </select>
+                            </div>
+                            <div class="field-group" style="flex: 1;">
+                                <label>Материалы:</label>
+                                <select id="materials">
+                                    <option value="1">Эконом класс</option>
+                                    <option value="1.3">Стандарт</option>
+                                    <option value="1.6">Премиум</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label>Сложность проекта:</label>
+                            <select id="projectComplexity">
+                                <option value="1">Простой проект</option>
+                                <option value="1.4">Средней сложности</option>
+                                <option value="1.7">Сложный дизайн</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced fields for Cleaning -->
+                    <div id="cleaningFields" class="enhanced-fields">
+                        <h4 style="margin-bottom: 12px; font-size: 16px;">Детали для уборки:</h4>
+                        <div class="form-row">
+                            <div class="field-group" style="flex: 1;">
+                                <label>Тип уборки:</label>
+                                <select id="cleaningType">
+                                    <option value="1">После ремонта</option>
+                                    <option value="1.2">Генеральная</option>
+                                    <option value="0.8">Поддерживающая</option>
+                                    <option value="1.4">Химчистка</option>
+                                </select>
+                            </div>
+                            <div class="field-group" style="flex: 1;">
+                                <label>Площадь помещения:</label>
+                                <select id="roomArea">
+                                    <option value="1">До 50 м²</option>
+                                    <option value="1.1">50-100 м²</option>
+                                    <option value="1.2">100-200 м²</option>
+                                    <option value="1.4">200+ м²</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label>Дополнительные услуги:</label>
+                            <select id="additionalServices">
+                                <option value="1">Базовые услуги</option>
+                                <option value="1.3">Мытье окон</option>
+                                <option value="1.5">Чистка мебели</option>
+                                <option value="1.7">Все услуги</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgency">Срочность</label>
+                        <select id="urgency" required>
+                            <option value="1">Обычная (без наценки)</option>
+                            <option value="1.2">Срочная (+20%)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="calculatePrice()" style="width: 100%;">
+                        Рассчитать
+                    </button>
+                </form>
+
+                <div class="calculator-result">
+                    <p class="result-label">Предварительная стоимость:</p>
+                    <div class="result-price" id="resultPrice">0 ₽</div>
+                    <p class="result-note">* Точная стоимость рассчитывается после выезда специалиста на объект</p>
+                    <button class="btn btn-primary" onclick="scrollToContact()" style="width: 100%; margin-top: 16px;">
+                        Оставить заявку на точный расчет
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <p class="stat-label">лет на рынке</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <p class="stat-label">выполненных объектов</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <p class="stat-label">довольных клиентов</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <p class="stat-label">специалистов в команде</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши проекты</h2>
+                <p class="section-subtitle">Портфолио выполненных работ</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openImageModal('project1')" data-project="Монолитный фундамент">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Фундамент<br>Загрузка...</div>
+                    <div class="gallery-info">
+                        <h4>Монолитный фундамент</h4>
+                        <p>Жилой комплекс, 2024</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openImageModal('project2')" data-project="Демонтаж здания">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">Демонтаж<br>Загрузка...</div>
+                    <div class="gallery-info">
+                        <h4>Демонтаж старого здания</h4>
+                        <p>Коммерческий объект, 2024</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openImageModal('project3')" data-project="Черновая отделка">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">Черновая<br>Загрузка...</div>
+                    <div class="gallery-info">
+                        <h4>Штукатурка стен</h4>
+                        <p>Офисное здание, 2024</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openImageModal('project4')" data-project="Чистовая отделка">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">Чистовая<br>Загрузка...</div>
+                    <div class="gallery-info">
+                        <h4>Комплексная отделка квартиры</h4>
+                        <p>ЖК "Новый город", 2025</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openImageModal('project5')" data-project="Бетонные работы">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">Бетон<br>Загрузка...</div>
+                    <div class="gallery-info">
+                        <h4>Бетонная стяжка</h4>
+                        <p>Торговый центр, 2024</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openImageModal('project6')" data-project="Уборка объекта">
+                    <div class="gallery-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">Уборка<br>Загрузка...</div>
+                    <div class="gallery-info">
+                        <h4>Послестроительная уборка</h4>
+                        <p>Бизнес-центр, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment and Machinery -->
+    <section id="equipment">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наша техника и оборудование</h2>
+                <p class="section-subtitle">Современное оборудование для качественной работы</p>
+            </div>
+
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-image" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4);">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3L2 21h20L12 3z"/>
+                            <path d="M9 21V12l3-3v12"/>
+                            <path d="M15 21V12l3-3v12"/>
+                        </svg>
+                    </div>
+                    <div class="equipment-info">
+                        <h4>Автокран 25т</h4>
+                        <p>Многофункциональный автокран для подъема тяжелых конструкций и материалов</p>
+                        <div class="equipment-specs">
+                            <span class="spec-tag">Грузоподъемность 25т</span>
+                            <span class="spec-tag">Стрела 28м</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="6" width="18" height="12" rx="1"/>
+                            <path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                            <path d="M8 12v6"/>
+                            <path d="M16 12v6"/>
+                        </svg>
+                    </div>
+                    <div class="equipment-info">
+                        <h4>Экскаватор</h4>
+                        <p>Колесный экскаватор для земельных работ и демонтажа</p>
+                        <div class="equipment-specs">
+                            <span class="spec-tag">Ковш 1.2м³</span>
+                            <span class="spec-tag">Глубина 6м</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 6h12l3 6-3 6H6L3 12z"/>
+                            <path d="M9 3v18"/>
+                            <path d="M15 3v18"/>
+                        </svg>
+                    </div>
+                    <div class="equipment-info">
+                        <h4>Автобетоносмеситель</h4>
+                        <p>Специализированный автомобиль для транспортировки и подачи бетона</p>
+                        <div class="equipment-specs">
+                            <span class="spec-tag">Объем 9м³</span>
+                            <span class="spec-tag">Подача до 6м</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="8" width="8" height="8" rx="2"/>
+                            <path d="M10 8V4a2 2 0 012-2h4"/>
+                            <path d="M14 8h2v4a2 2 0 01-2 2h-2"/>
+                            <path d="M10 12h4"/>
+                        </svg>
+                    </div>
+                    <div class="equipment-info">
+                        <h4>Виброоборудование</h4>
+                        <p>Глубинные вибраторы и виброрейки для уплотнения бетона</p>
+                        <div class="equipment-specs">
+                            <span class="spec-tag">Частота 200Гц</span>
+                            <span class="spec-tag">Мощность 2кВт</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-image" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <div class="equipment-info">
+                        <h4>Отбойные молотки</h4>
+                        <p>Пневматические и электрические отбойные молотки для демонтажа</p>
+                        <div class="equipment-specs">
+                            <span class="spec-tag">Мощность 1500Вт</span>
+                            <span class="spec-tag">Вес 25кг</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-image" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1m15.5-3.5L18 2M6 22l2.5-2.5M1 12h6m6 0h6"/>
+                        </svg>
+                    </div>
+                    <div class="equipment-info">
+                        <h4>Штукатурная станция</h4>
+                        <p>Автоматизированная машина для машинной штукатурки</p>
+                        <div class="equipment-specs">
+                            <span class="spec-tag">Продуктивность 30м²/ч</span>
+                            <span class="spec-tag">Дальность 30м</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Отзывы клиентов</h2>
+                <p class="section-subtitle">Что говорят о нас наши клиенты</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Отличная работа! Залили фундамент для нашего дома быстро и качественно. Все этапы прошли согласно договору, цена не изменилась. Рекомендую!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">АС</div>
+                        <div class="author-info">
+                            <h5>Алексей Смирнов</h5>
+                            <p>Частный заказчик</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Работали с компанией по демонтажу старого здания. Все сделали аккуратно, безопасно, вывезли весь мусор. Профессионалы своего дела."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ЕП</div>
+                        <div class="author-info">
+                            <h5>Елена Петрова</h5>
+                            <p>ООО "СтройИнвест"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Заказывали черновую отделку офиса. Штукатурка машинным способом — это действительно быстро! Качество на высоте, сроки соблюдены."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ДК</div>
+                        <div class="author-info">
+                            <h5>Дмитрий Козлов</h5>
+                            <p>Директор компании</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates and Licenses -->
+    <section id="certificates" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Сертификаты и лицензии</h2>
+                <p class="section-subtitle">Подтверждаем качество и надежность</p>
+            </div>
+
+            <div class="certificates-grid">
+                <div class="certificate-item" onclick="openModal('certificate1')">
+                    <div class="certificate-preview">СРО<br>Строительство</div>
+                    <div class="certificate-info">
+                        <h4>Саморегулируемая организация</h4>
+                        <p>Член СРО в области строительства и проектирования. Свидетельство о допуске к работам.</p>
+                    </div>
+                </div>
+
+                <div class="certificate-item" onclick="openModal('certificate2')">
+                    <div class="certificate-preview">ISO<br>9001:2015</div>
+                    <div class="certificate-info">
+                        <h4>Система менеджмента качества</h4>
+                        <p>Сертификат соответствия требованиям международного стандарта ISO 9001:2015.</p>
+                    </div>
+                </div>
+
+                <div class="certificate-item" onclick="openModal('certificate3')">
+                    <div class="certificate-preview">Лицензия<br>Минстрой</div>
+                    <div class="certificate-info">
+                        <h4>Лицензия на строительство</h4>
+                        <p>Лицензия Министерства строительства и ЖКХ РФ на выполнение строительно-монтажных работ.</p>
+                    </div>
+                </div>
+
+                <div class="certificate-item" onclick="openModal('certificate4')">
+                    <div class="certificate-preview">Допуски<br>Спецработы</div>
+                    <div class="certificate-info">
+                        <h4>Допуски к специальным работам</h4>
+                        <p>Разрешения на выполнение особо опасных и технически сложных объектов.</p>
+                    </div>
+                </div>
+
+                <div class="certificate-item" onclick="openModal('certificate5')">
+                    <div class="certificate-preview">Экология<br>Безопасность</div>
+                    <div class="certificate-info">
+                        <h4>Сертификаты безопасности</h4>
+                        <p>Сертификаты соответствия экологическим стандартам и требованиям охраны труда.</p>
+                    </div>
+                </div>
+
+                <div class="certificate-item" onclick="openModal('certificate6')">
+                    <div class="certificate-preview">Страхование<br>ОСАГО</div>
+                    <div class="certificate-info">
+                        <h4>Страхование ответственности</h4>
+                        <p>Полис страхования профессиональной ответственности и гражданской ответственности.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Остались вопросы?</h2>
+                <p class="section-subtitle">Свяжитесь с нами, и мы ответим в ближайшее время</p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя *</label>
+                    <input type="text" id="name" placeholder="Иван Иванов" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your@email.ru">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" placeholder="Расскажите о вашем проекте..."></textarea>
+                </div>
+
+                <div class="form-consent">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">Я согласен на обработку персональных данных</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 16px;">
+                    Отправить заявку
+                </button>
+
+                <div class="success-message" id="successMessage">
+                    ✓ Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>О компании</h4>
+                    <p>Русь-Строй - профессиональная строительная компания с 15-летним опытом работы. Выполняем полный спектр строительных работ по всей России.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <a href="#services">Бетонные работы</a>
+                    <a href="#services">Демонтажные работы</a>
+                    <a href="#services">Черновая отделка</a>
+                    <a href="#services">Чистовая отделка</a>
+                    <a href="#services">Уборка объектов</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <a href="tel:+78001234567">8 (800) 123-45-67</a>
+                    <a href="/cdn-cgi/l/email-protection#4d24232b220d3f383e603e393f2234633f38"><span class="__cf_email__" data-cfemail="b9d0d7dfd6f9cbccca94cacdcbd6c097cbcc">[email&#160;protected]</span></a>
+                    <p style="margin-top: 16px;">Ежедневно с 9:00 до 21:00</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Реквизиты</h4>
+                    <p>ООО "Русь-Строй"</p>
+                    <p>ИНН: 7701234567</p>
+                    <p>ОГРН: 1027700001234</p>
+                    <p>КПП: 770101001</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Русь-Строй. Все права защищены. | <a href="#" style="color: inherit;">Политика конфиденциальности</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call Button -->
+    <div class="floating-btn" onclick="window.location.href='tel:+78001234567'">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+    </div>
+
+    <!-- Messenger Buttons -->
+    <div class="messenger-buttons">
+        <a href="https://wa.me/78001234567" class="messenger-btn" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2.37c-2.58 0-4.76.8-5.52 2.18l-.36.65-.71.09-.26.51c-.43.17-.89.29-1.39.34-.57.06-1.18.07-1.83.04-1.66-.08-3.22-.73-4.31-1.93C3.34 6.23 2.5 5.06 2.5 3.72 2.5 2.13 3.72.91 5.3.91c.84 0 1.66.32 2.26.9.6.58.94 1.35.94 2.17 0 .65-.21 1.27-.59 1.77-.2.27-.44.5-.7.69-.26.19-.54.34-.84.47-.3.13-.62.23-.95.29-.33.06-.66.09-1 .09-.35 0-.69-.03-1.03-.08-.34-.05-.67-.13-.99-.23-.32-.1-.63-.23-.93-.38-.3-.15-.58-.32-.85-.51-.27-.19-.52-.39-.75-.6-.23-.21-.45-.43-.66-.66-.21-.23-.41-.47-.6-.72-.19-.25-.37-.51-.54-.78-.17-.27-.32-.55-.46-.83-.14-.28-.27-.56-.39-.84-.12-.28-.22-.57-.31-.86-.09-.29-.16-.58-.21-.87-.05-.29-.08-.58-.1-.87-.02-.29-.02-.58-.02-.87 0-2.17 1.78-3.94 3.96-3.94 2.17 0 3.95 1.77 3.95 3.94 0 2.17-1.78 3.95-3.95 3.95z"/>
+            </svg>
+            WhatsApp
+        </a>
+        <a href="https://t.me/rus_stroy_support" class="messenger-btn telegram" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C18.62 0 21.56 6.93 21.56 12s-2.94 12-21.56 12S-9.12 18.07-9.12 12-6.18 0 12 0zm10.12 10.22c.39-.47.89-.95.89-.95s-2.09-2.32-3.08-4.01c-.79-1.37-1.39-2.9-1.39-2.9s.2-.46.31-.79c.12-.34.16-.61.16-.61s3.08 7.33 3.09 7.33z"/>
+                <path d="M12 0c6.62 0 9.56 6.93 9.56 12S18.62 24 12 24s-21.56-6.93-21.56-12S5.38 0 12 0zm-4.07 7.81s.41-.18.52-.24c.12-.06.24-.08.34-.05.11.03.28.13.28.13s3.79 2.47 5.63 3.67c1.84 1.2 3.43 2.03 3.43 2.03s.41-1.38-.59-2.37c-1-1-2.16-1.53-2.16-1.53s.28.48.62.77c.35.28.88.74 1.14.95.26.21.33.21.33.21l-1.93 4.71c-1.13.25-4.19-2.37-4.83-2.69-.64-.32-3.16-1.64-3.16-1.64s.34-.47.51-.53c.16-.06.39-.06.39-.06l-.78-2.14z"/>
+            </svg>
+            Telegram
+        </a>
+    </div>
+
+    <!-- Image Modal for Portfolio -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('imageModal')">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle">Название проекта</h3>
+                <p id="modalDescription">Описание проекта будет добавлено здесь.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="closeModal('imageModal')">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close" onclick="closeModal('certificateModal')">&times;</span>
+            <div id="certificateContent">
+                <h3>Сертификат или лицензия</h3>
+                <p>Здесь будет отображаться информация о сертификате с возможностью просмотра увеличенного изображения документа.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="closeModal('certificateModal')">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Enhanced Calculator functionality
+        function showEnhancedFields() {
+            const serviceType = document.getElementById('serviceType').value;
+            const concreteFields = document.getElementById('concreteFields');
+            const demolitionFields = document.getElementById('demolitionFields');
+            const roughFields = document.getElementById('roughFields');
+            const cleanFields = document.getElementById('cleanFields');
+            const cleaningFields = document.getElementById('cleaningFields');
+
+            // Hide all enhanced fields
+            [concreteFields, demolitionFields, roughFields, cleanFields, cleaningFields].forEach(field => {
+                if (field) field.classList.remove('show');
+            });
+
+            // Show relevant fields based on service type
+            if (serviceType === '6500') { // Concrete works
+                concreteFields.classList.add('show');
+            } else if (serviceType === '1500') { // Demolition works
+                demolitionFields.classList.add('show');
+            } else if (serviceType === '400') { // Rough finishing
+                roughFields.classList.add('show');
+            } else if (serviceType === '800') { // Clean finishing
+                cleanFields.classList.add('show');
+            } else if (serviceType === '150') { // Cleaning
+                cleaningFields.classList.add('show');
+            }
+        }
+
+        function calculatePrice() {
+            const serviceType = document.getElementById('serviceType').value;
+            const area = document.getElementById('area').value;
+            const urgency = document.getElementById('urgency').value;
+
+            if (!serviceType || !area) {
+                alert('Пожалуйста, заполните все обязательные поля');
+                return;
+            }
+
+            let basePrice = parseFloat(serviceType);
+            let multiplier = 1;
+
+            // Apply enhanced field multipliers based on service type
+            if (serviceType === '6500') { // Concrete works
+                const foundationType = document.getElementById('foundationType');
+                const concreteGrade = document.getElementById('concreteGrade');
+                const reinforcement = document.getElementById('reinforcement');
+                
+                if (foundationType) multiplier *= parseFloat(foundationType.value);
+                if (concreteGrade) multiplier *= parseFloat(concreteGrade.value);
+                if (reinforcement) multiplier *= parseFloat(reinforcement.value);
+            } 
+            else if (serviceType === '1500') { // Demolition works
+                const demolitionType = document.getElementById('demolitionType');
+                const buildingFloors = document.getElementById('buildingFloors');
+                const wasteRemoval = document.getElementById('wasteRemoval');
+                
+                if (demolitionType) multiplier *= parseFloat(demolitionType.value);
+                if (buildingFloors) multiplier *= parseFloat(buildingFloors.value);
+                if (wasteRemoval) multiplier *= parseFloat(wasteRemoval.value);
+            }
+            else if (serviceType === '400') { // Rough finishing
+                const roughType = document.getElementById('roughType');
+                const roughMethod = document.getElementById('roughMethod');
+                const surfaceCondition = document.getElementById('surfaceCondition');
+                
+                if (roughType) multiplier *= parseFloat(roughType.value);
+                if (roughMethod) multiplier *= parseFloat(roughMethod.value);
+                if (surfaceCondition) multiplier *= parseFloat(surfaceCondition.value);
+            }
+            else if (serviceType === '800') { // Clean finishing
+                const cleanType = document.getElementById('cleanType');
+                const materials = document.getElementById('materials');
+                const projectComplexity = document.getElementById('projectComplexity');
+                
+                if (cleanType) multiplier *= parseFloat(cleanType.value);
+                if (materials) multiplier *= parseFloat(materials.value);
+                if (projectComplexity) multiplier *= parseFloat(projectComplexity.value);
+            }
+            else if (serviceType === '150') { // Cleaning
+                const cleaningType = document.getElementById('cleaningType');
+                const roomArea = document.getElementById('roomArea');
+                const additionalServices = document.getElementById('additionalServices');
+                
+                if (cleaningType) multiplier *= parseFloat(cleaningType.value);
+                if (roomArea) multiplier *= parseFloat(roomArea.value);
+                if (additionalServices) multiplier *= parseFloat(additionalServices.value);
+            }
+
+            const totalPrice = Math.round(basePrice * parseFloat(area) * parseFloat(urgency) * multiplier);
+            document.getElementById('resultPrice').textContent = totalPrice.toLocaleString('ru-RU') + ' ₽';
+        }
+
+        // Modal functionality
+        function openImageModal(projectId) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+
+            // Set image based on project
+            const projectImages = {
+                'project1': 'Фундамент',
+                'project2': 'Демонтаж',
+                'project3': 'Черновая отделка',
+                'project4': 'Чистовая отделка',
+                'project5': 'Бетонные работы',
+                'project6': 'Уборка объекта'
+            };
+
+            modalTitle.textContent = projectImages[projectId] || 'Проект';
+            modalDescription.textContent = 'Подробная информация о выполненных работах. Изображение проекта загружается...';
+
+            modal.style.display = 'block';
+        }
+
+        function openModal(certificateId) {
+            const modal = document.getElementById('certificateModal');
+            const content = document.getElementById('certificateContent');
+
+            const certificateData = {
+                'certificate1': {
+                    title: 'СРО в области строительства',
+                    description: 'Саморегулируемая организация в области строительства. Сертификат подтверждает право на выполнение строительно-монтажных работ любой сложности, включая особо опасные объекты. Действует до 2026 года.',
+                    preview: 'СРО Строительство'
+                },
+                'certificate2': {
+                    title: 'ISO 9001:2015',
+                    description: 'Международный стандарт системы менеджмента качества. Сертификат подтверждает соответствие системы управления качеством требованиям международного стандарта ISO 9001:2015.',
+                    preview: 'ISO 9001:2015'
+                },
+                'certificate3': {
+                    title: 'Лицензия на строительство',
+                    description: 'Лицензия Министерства строительства и ЖКХ РФ на выполнение строительно-монтажных работ. Номер лиценции: СРО-Г-123-45678901. Действует до 2030 года.',
+                    preview: 'Лицензия Минстрой'
+                },
+                'certificate4': {
+                    title: 'Допуски к специальным работам',
+                    description: 'Разрешения на выполнение особо опасных и технически сложных объектов, включая высотное строительство, работа с несущими конструкциями и монтаж инженерных систем.',
+                    preview: 'Допуски Спецработы'
+                },
+                'certificate5': {
+                    title: 'Экологические сертификаты',
+                    description: 'Сертификаты соответствия экологическим стандартам и требованиям охраны труда. Подтверждают использование безопасных материалов и соблюдение экологических норм.',
+                    preview: 'Экология Безопасность'
+                },
+                'certificate6': {
+                    title: 'Страхование ответственности',
+                    description: 'Полис страхования профессиональной ответственности и гражданской ответственности при выполнении строительных работ. Сумма покрытия до 10 000 000 рублей.',
+                    preview: 'Страхование ОСАГО'
+                }
+            };
+
+            const cert = certificateData[certificateId];
+            content.innerHTML = `
+                <div class="certificate-preview" style="height: 150px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 18px; border-radius: 8px;">
+                    ${cert.preview}
+                </div>
+                <h3 style="margin-bottom: 16px;">${cert.title}</h3>
+                <p style="line-height: 1.6; color: #6C757D;">${cert.description}</p>
+            `;
+
+            modal.style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        });
+
+        // Smooth scroll
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize enhanced fields
+            showEnhancedFields();
+        });
+    </script>
+</body>
+</html>
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
