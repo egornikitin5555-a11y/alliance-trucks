@@ -3,62 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Строй Русь - Качественный ремонт и отделка в Москве</title>
-    <meta name="description" content="Строй Русь - профессиональные услуги по ремонту и отделке в Москве. Черновая и чистовая отделка, демонтаж, монтаж, бетонные работы.">
-    <meta name="keywords" content="ремонт, отделка, демонтаж, монтаж, бетонные работы, уборка, Строй Русь, Москва">
-    
-    <!-- Google Fonts -->
+    <title>Чистый Дом 159 - Профессиональные клининговые услуги</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Header -->
+    <header class="header">
         <div class="container">
-            <div class="nav-brand">
-                <h2>СТРОЙ РУСЬ</h2>
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#0057FF"/>
+                        <path d="M20 10L12 18H16V28H24V18H28L20 10Z" fill="white"/>
+                    </svg>
+                    <div class="logo-text">
+                        <div class="logo-title">Чистый Дом 159</div>
+                        <div class="logo-subtitle">Премиальный клининг 24/7</div>
+                    </div>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a href="#home" class="nav-link">Главная</a>
+                    <a href="#services" class="nav-link">Услуги</a>
+                    <a href="#about" class="nav-link">О нас</a>
+                    <a href="#contacts" class="nav-link">Контакты</a>
+                </nav>
+                
+                <div class="header-contact">
+                    <div class="contact-info">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" fill="currentColor"/>
+                        </svg>
+                        <div>
+                            <div class="contact-label">Телефон:</div>
+                            <a href="tel:+74951594567" class="contact-value">+7 (495) 159-45-67</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <div class="nav-menu" id="navMenu">
-                <a href="#services" class="nav-link">Услуги</a>
-                <a href="#portfolio" class="nav-link">Портфолио</a>
-                <a href="#contact" class="nav-link">Контакты</a>
-            </div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-background">
-            <img src="images/hero-bg.jpg" alt="Качественный ремонт от Строй Русь" class="hero-bg-image">
-            <div class="hero-overlay"></div>
-        </div>
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    СТРОЙ РУСЬ:<br>
-                    КАЧЕСТВЕННЫЙ РЕМОНТ<br>
-                    И ОТДЕЛКА В МОСКВЕ
-                </h1>
-                <p class="hero-subtitle">
-                    Надежность, проверенная временем.<br>
-                    От демонтажа до чистовой отделки.
-                </p>
-                <a href="https://t.me/Nikitin0130" target="_blank" class="cta-button">
-                    <i class="fab fa-telegram"></i>
-                    СВЯЗАТЬСЯ В TELEGRAM
-                </a>
+                <h1 class="hero-title">Профессиональный Клининг</h1>
+                <p class="hero-description">Откройте для себя мир безупречной чистоты от ведущей клининговой компании. Качество премиум-класса, сервис мирового уровня.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Смотреть услуги</a>
+                    <a href="#contacts" class="btn btn-secondary">Связаться с нами</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Лет опыта</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Довольных клиентов</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Объектов в месяц</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Бригад специалистов</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us" id="about">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <p class="section-subtitle">Мы не просто убираем — мы создаем комфорт и долгосрочные партнерские отношения</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="#E6EEFF"/>
+                            <path d="M44 24L28 40L20 32" stroke="#0057FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Гарантия качества</h3>
+                    <p class="feature-description">Официальная гарантия на все виды работ. Если что-то не устроит — переделаем бесплатно</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="#E6EEFF"/>
+                            <path d="M32 16C23.2 16 16 23.2 16 32C16 40.8 23.2 48 32 48C40.8 48 48 40.8 48 32C48 23.2 40.8 16 32 16ZM32 44C25.4 44 20 38.6 20 32C20 25.4 25.4 20 32 20C38.6 20 44 25.4 44 32C44 38.6 38.6 44 32 44Z" fill="#0057FF"/>
+                            <path d="M32 24V34L38 38" stroke="#0057FF" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Премиум сервис</h3>
+                    <p class="feature-description">Персональный подход к каждому клиенту и круглосуточная поддержка</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="32" fill="#E6EEFF"/>
+                            <path d="M20 28H28V44H20V28Z" fill="#0057FF"/>
+                            <path d="M30 20H38V44H30V20Z" fill="#0057FF"/>
+                            <path d="M40 32H48V44H40V32Z" fill="#0057FF"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Экспертность</h3>
+                    <p class="feature-description">15 лет опыта работы в сфере клининговых услуг премиум-класса</p>
+                </div>
             </div>
         </div>
     </section>
@@ -66,202 +141,1073 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">НАШИ УСЛУГИ</h2>
-                <p class="section-subtitle">
-                    Полный спектр строительных и отделочных работ<br>
-                    с гарантией качества
-                </p>
-            </div>
+            <h2 class="section-title">Популярные услуги</h2>
+            <p class="section-subtitle">Профессиональные клининговые услуги для любых задач</p>
+            
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/black-work.jpg" alt="Черновая отделка">
-                    </div>
+                    <div class="service-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI0U2RUVGRiIvPjxwYXRoIGQ9Ik0yMDAgODBMMTYwIDEyMEgxODBWMTgwSDIyMFYxMjBIMjQwTDIwMCA4MFoiIGZpbGw9IiMwMDU3RkYiLz48dGV4dCB4PSI1MCUiIHk9IjYwJSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmaWxsPSIjNEE1NTY4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7Qo9Cx0L7RgNC60LAg0LrQstCw0YDRgtC40YA8L3RleHQ+PC9zdmc+')"></div>
                     <div class="service-content">
-                        <h3 class="service-title">Черновая отделка</h3>
-                        <ul class="service-list">
-                            <li>Штукатурка стен</li>
-                            <li>Стяжка пола</li>
-                            <li>Прокладка коммуникаций</li>
-                        </ul>
+                        <div class="service-type">Жилые помещения</div>
+                        <h3 class="service-title">Уборка квартир</h3>
+                        <p class="service-description">Профессиональная уборка квартир любой площади. Включает уборку всех помещений, мытье окон, чистку ковров...</p>
+                        <div class="service-meta">
+                            <span class="service-price">от 3 500 ₽</span>
+                        </div>
+                        <a href="#contacts" class="btn btn-outline">Заказать</a>
                     </div>
                 </div>
-
+                
                 <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/clean-work.jpg" alt="Чистовая отделка">
-                    </div>
+                    <div class="service-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI0U2RUVGRiIvPjxyZWN0IHg9IjEyMCIgeT0iODAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTIwIiBmaWxsPSIjMDA1N0ZGIi8+PHJlY3QgeD0iMTQwIiB5PSIxMDAiIHdpZHRoPSIxMjAiIGhlaWdodD0iODAiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNTAlIiB5PSI2MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZmlsbD0iIzRBNTU2OCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+0KPQsdC+0YDQutCwINC+0YTQuNGB0L7QsjwvdGV4dD48L3N2Zz4=')"></div>
                     <div class="service-content">
-                        <h3 class="service-title">Чистовая отделка</h3>
-                        <ul class="service-list">
-                            <li>Покраска стен и потолков</li>
-                            <li>Укладка напольных покрытий</li>
-                            <li>Монтаж плитки</li>
-                        </ul>
+                        <div class="service-type">Коммерческая недвижимость</div>
+                        <h3 class="service-title">Уборка офисов</h3>
+                        <p class="service-description">Комплексная уборка офисных помещений. Поддерживающая и генеральная уборка, дезинфекция, озонирование...</p>
+                        <div class="service-meta">
+                            <span class="service-price">от 8 500 ₽</span>
+                        </div>
+                        <a href="#contacts" class="btn btn-outline">Заказать</a>
                     </div>
                 </div>
-
+                
                 <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/demolition.jpg" alt="Демонтаж">
-                    </div>
+                    <div class="service-image" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0iI0U2RUVGRiIvPjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEyNSIgcj0iNjAiIGZpbGw9IiMwMDU3RkYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxMjUiIHI9IjQwIiBmaWxsPSJ3aGl0ZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNzAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM0QTU1NjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPtCl0LjQvNGH0LjRgdGC0LrQsDwvdGV4dD48L3N2Zz4=')"></div>
                     <div class="service-content">
-                        <h3 class="service-title">Демонтаж</h3>
-                        <ul class="service-list">
-                            <li>Демонтаж стен</li>
-                            <li>Удаление старых покрытий</li>
-                            <li>Расчистка помещений</li>
-                        </ul>
+                        <div class="service-type">Специализированные услуги</div>
+                        <h3 class="service-title">Химчистка мебели</h3>
+                        <p class="service-description">Профессиональная химчистка мягкой мебели и ковровых покрытий. Удаление пятен, устранение запахов, антибактериальная обработка...</p>
+                        <div class="service-meta">
+                            <span class="service-price">от 2 500 ₽</span>
+                        </div>
+                        <a href="#contacts" class="btn btn-outline">Заказать</a>
                     </div>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/installation.jpg" alt="Монтаж">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Монтаж</h3>
-                        <ul class="service-list">
-                            <li>Установка перегородок</li>
-                            <li>Монтаж конструкций</li>
-                            <li>Монтаж инженерных систем</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/concrete-work.jpg" alt="Бетонные работы">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Бетонные работы</h3>
-                        <ul class="service-list">
-                            <li>Заливка фундаментов</li>
-                            <li>Бетонная стяжка</li>
-                            <li>Возведение конструкций</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/cleaning.jpg" alt="Уборка мусора">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="service-title">Уборка строительного мусора</h3>
-                        <ul class="service-list">
-                            <li>Профессиональная уборка</li>
-                            <li>Вывоз мусора</li>
-                            <li>Подготовка к финишной отделке</li>
-                        </ul>
-                    </div>
-                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="#contacts" class="btn btn-primary">Посмотреть все услуги</a>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">НАШИ РАБОТЫ</h2>
-                <p class="section-subtitle">
-                    Примеры выполненных проектов<br>
-                    с гарантией качества
-                </p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="images/portfolio-1.jpg" alt="Капитальный ремонт">
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-content">
-                            <h3>Капитальный ремонт</h3>
-                            <p>Полная реконструкция помещения</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio-2.jpg" alt="Демонтажные работы">
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-content">
-                            <h3>Демонтажные работы</h3>
-                            <p>Профессиональный демонтаж</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="images/portfolio-3.jpg" alt="Чистовая отделка">
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-content">
-                            <h3>Чистовая отделка</h3>
-                            <p>Современный дизайн интерьера</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="contact-title">ГОТОВЫ НАЧАТЬ РАБОТУ?</h2>
-                    <p class="contact-subtitle">
-                        Свяжитесь с нами для консультации<br>
-                        и расчета стоимости вашего проекта
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fab fa-telegram"></i>
-                            <div>
-                                <h4>Телеграм</h4>
-                                <a href="https://t.me/Nikitin0130" target="_blank">@Nikitin0130</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-cta">
-                    <a href="https://t.me/Nikitin0130" target="_blank" class="cta-button large">
-                        <i class="fab fa-telegram"></i>
-                        НАПИСАТЬ В TELEGRAM
-                    </a>
+            <div class="cta-content">
+                <h2 class="cta-title">Готовы к заказу?</h2>
+                <p class="cta-description">Получите персональную консультацию и специальное предложение от наших экспертов</p>
+                <div class="cta-buttons">
+                    <a href="#contacts" class="btn btn-primary btn-large">Получить консультацию</a>
+                    <a href="tel:+74951594567" class="btn btn-secondary btn-large">Позвонить нам</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contacts">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>СТРОЙ РУСЬ</h3>
-                    <p>Качественный ремонт и отделка в Москве</p>
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#0057FF"/>
+                            <path d="M20 10L12 18H16V28H24V18H28L20 10Z" fill="white"/>
+                        </svg>
+                        <div class="logo-text">
+                            <div class="logo-title">Чистый Дом 159</div>
+                            <div class="logo-subtitle">Премиальный клининг</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">Профессиональная клининговая компания. Представляем широкий спектр услуг по уборке и чистке помещений любого типа.</p>
+                    <p class="footer-address">Москва, ул. Чистая, д. 159</p>
                 </div>
-                <div class="footer-links">
-                    <a href="#services">Услуги</a>
-                    <a href="#portfolio">Портфолио</a>
-                    <a href="https://t.me/Nikitin0130" target="_blank">Контакты</a>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#services">Наши услуги</a></li>
+                        <li><a href="#about">О компании</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Наши услуги</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Уборка квартир</a></li>
+                        <li><a href="#services">Уборка офисов</a></li>
+                        <li><a href="#services">Химчистка мебели</a></li>
+                        <li><a href="#services">Мытье окон</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-contacts">
+                        <li>
+                            <strong>Отдел продаж:</strong><br>
+                            <a href="tel:+74951594567">+7 (495) 159-45-67</a>
+                        </li>
+                        <li>
+                            <strong>Email поддержки:</strong><br>
+                            <a href="/cdn-cgi/l/email-protection#a2cbccc4cde2c1cacbd1d6cbdbc6cdcf93979b8cd0d7"><span class="__cf_email__" data-cfemail="0e676068614e6d66677d7a67776a61633f3b37207c7b">[email&#160;protected]</span></a>
+                        </li>
+                        <li>
+                            <strong>Режим работы:</strong><br>
+                            Пн-Пт: 9:00 - 19:00<br>
+                            Сб-Вс: 10:00 - 16:00
+                        </li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 Строй Русь. Все права защищены.</p>
+                <div class="footer-bottom-left">
+                    <p>© 2025 Чистый Дом 159. Все права защищены.</p>
+                    <p class="footer-tagline">Премиальный сервис • Гарантия качества</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <p class="footer-credit">Created by MiniMax Agent</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="scripts/main.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
 </body>
 </html>
-# Python 3
-python -m http.server 8000
+// ============================================
+// Mobile Navigation Toggle
+// ============================================
+document.addEventListener('DOMContentLoaded', function() {
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    
+    if (burger && nav) {
+        burger.addEventListener('click', function() {
+            burger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = nav.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                burger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = nav.contains(event.target);
+            const isClickOnBurger = burger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnBurger && nav.classList.contains('active')) {
+                burger.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+    }
+});
 
-# Node.js
-npx serve .
+// ============================================
+// Smooth Scrolling for Anchor Links
+// ============================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // Don't prevent default if it's just "#"
+        if (href === '#') {
+            e.preventDefault();
+            return;
+        }
+        
+        const target = document.querySelector(href);
+        
+        if (target) {
+            e.preventDefault();
+            
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
-# PHP
-php -S localhost:8000
+// ============================================
+// Header Shadow on Scroll
+// ============================================
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    
+    if (window.scrollY > 50) {
+        header.style.boxShadow = '0px 4px 16px rgba(0, 87, 255, 0.12)';
+    } else {
+        header.style.boxShadow = '0px 4px 12px rgba(0, 87, 255, 0.08)';
+    }
+});
+
+// ============================================
+// Animate on Scroll (Simple Fade-In)
+// ============================================
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function handleScrollAnimation() {
+    const animatedElements = document.querySelectorAll('.service-card, .feature-card, .stat-item');
+    
+    animatedElements.forEach(element => {
+        if (isElementInViewport(element)) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
+    });
+}
+
+// Initialize animation on page load
+window.addEventListener('load', function() {
+    const animatedElements = document.querySelectorAll('.service-card, .feature-card, .stat-item');
+    
+    animatedElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    });
+    
+    handleScrollAnimation();
+});
+
+window.addEventListener('scroll', handleScrollAnimation);
+
+// ============================================
+// Counter Animation for Stats
+// ============================================
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16); // 60 FPS
+    
+    const timer = setInterval(() => {
+        start += increment;
+        
+        if (start >= target) {
+            element.textContent = formatNumber(target);
+            clearInterval(timer);
+        } else {
+            element.textContent = formatNumber(Math.floor(start));
+        }
+    }, 16);
+}
+
+function formatNumber(num) {
+    if (num >= 1000) {
+        return (num / 1000).toFixed(1).replace('.0', '') + 'K';
+    }
+    return num.toString();
+}
+
+// Trigger counter animation when stats section is in view
+let statsAnimated = false;
+
+function checkStatsSection() {
+    const statsSection = document.querySelector('.stats');
+    
+    if (!statsAnimated && statsSection && isElementInViewport(statsSection)) {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        statNumbers.forEach(stat => {
+            const text = stat.textContent;
+            const number = parseInt(text.replace(/\D/g, ''));
+            const suffix = text.replace(/[0-9]/g, '');
+            
+            stat.dataset.suffix = suffix;
+            
+            // Custom animation based on value
+            if (number >= 1000) {
+                animateCounter(stat, number, 2000);
+                stat.textContent += suffix;
+            } else {
+                animateCounter(stat, number, 1500);
+                stat.textContent += suffix;
+            }
+        });
+        
+        statsAnimated = true;
+    }
+}
+
+window.addEventListener('scroll', checkStatsSection);
+window.addEventListener('load', checkStatsSection);
+
+// ============================================
+// Form Handling (if you add contact forms later)
+// ============================================
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    // Add your form submission logic here
+    alert('Спасибо за обращение! Мы свяжемся с вами в ближайшее время.');
+}
+
+// ============================================
+// Console Message
+// ============================================
+console.log('%c🏠 Чистый Дом 159', 'font-size: 20px; font-weight: bold; color: #0057FF;');
+console.log('%cСоздано с помощью MiniMax Agent', 'font-size: 12px; color: #4A5568;');
+/* ============================================
+   CSS Variables (Design Tokens)
+   ============================================ */
+:root {
+    /* Colors */
+    --primary-500: #0057FF;
+    --primary-700: #004AD8;
+    --primary-100: #E6EEFF;
+    
+    --neutral-900: #1A202C;
+    --neutral-700: #4A5568;
+    --neutral-100: #E2E8F0;
+    --neutral-0: #FFFFFF;
+    
+    --bg-page: #F8F9FA;
+    
+    --success: #28A745;
+    --error: #DC3545;
+    
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    /* Spacing */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-xxl: 64px;
+    --space-xxxl: 96px;
+    
+    /* Radius */
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    
+    /* Shadows */
+    --shadow-md: 0px 4px 12px rgba(0, 87, 255, 0.08);
+    --shadow-lg: 0px 8px 24px rgba(0, 87, 255, 0.12);
+    
+    /* Container */
+    --container-width: 1280px;
+}
+
+/* ============================================
+   Reset & Base Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--neutral-900);
+    background-color: var(--bg-page);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================
+   Container
+   ============================================ */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.header {
+    background-color: var(--neutral-0);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) 0;
+    gap: var(--space-lg);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--neutral-900);
+}
+
+.logo-subtitle {
+    font-size: 12px;
+    color: var(--neutral-700);
+}
+
+.nav {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.nav-link {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--neutral-700);
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-500);
+}
+
+.header-contact {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.contact-info .icon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-500);
+}
+
+.contact-label {
+    font-size: 12px;
+    color: var(--neutral-700);
+}
+
+.contact-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--neutral-900);
+    transition: color 0.25s ease;
+}
+
+.contact-value:hover {
+    color: var(--primary-500);
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--neutral-900);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSI1NjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDA1N0ZGO3N0b3Atb3BhY2l0eTowLjgiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMEFBRkY7c3RvcC1vcGFjaXR5OjAuNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjU2MCIgZmlsbD0idXJsKCNncmFkKSIvPjwvc3ZnPg==');
+    background-size: cover;
+    background-position: center;
+    color: var(--neutral-0);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-lg);
+    height: 56px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-500);
+    color: var(--neutral-0);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-700);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--neutral-0);
+    color: var(--primary-500);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-100);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-500);
+    border: 2px solid var(--primary-500);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-500);
+    color: var(--neutral-0);
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    height: 64px;
+    padding: var(--space-md) var(--space-xl);
+}
+
+/* ============================================
+   Stats Section
+   ============================================ */
+.stats {
+    background-color: var(--neutral-0);
+    padding: var(--space-xxl) 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--primary-500);
+    margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+    font-size: 16px;
+    color: var(--neutral-700);
+}
+
+/* ============================================
+   Section Styles
+   ============================================ */
+.section-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--neutral-700);
+    text-align: center;
+    margin-bottom: var(--space-xxl);
+}
+
+.section-cta {
+    text-align: center;
+    margin-top: var(--space-xxl);
+}
+
+/* ============================================
+   Why Us Section
+   ============================================ */
+.why-us {
+    padding: var(--space-xxxl) 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.feature-card {
+    background-color: var(--neutral-0);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease-out;
+}
+
+.feature-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: var(--space-md);
+}
+
+.feature-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.feature-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: var(--space-sm);
+}
+
+.feature-description {
+    font-size: 16px;
+    color: var(--neutral-700);
+    line-height: 1.6;
+}
+
+/* ============================================
+   Services Section
+   ============================================ */
+.services {
+    padding: var(--space-xxxl) 0;
+    background-color: var(--neutral-0);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.service-card {
+    background-color: var(--neutral-0);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px) scale(1.02);
+}
+
+.service-image {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-content {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.service-type {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-xs);
+}
+
+.service-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: var(--space-sm);
+}
+
+.service-description {
+    font-size: 16px;
+    color: var(--neutral-700);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    flex: 1;
+}
+
+.service-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+}
+
+.service-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-500);
+}
+
+/* ============================================
+   CTA Section
+   ============================================ */
+.cta-section {
+    padding: var(--space-xxxl) 0;
+    background: linear-gradient(135deg, var(--primary-500) 0%, #0077FF 100%);
+    color: var(--neutral-0);
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+.cta-description {
+    font-size: 18px;
+    margin-bottom: var(--space-xl);
+    opacity: 0.95;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background-color: var(--neutral-900);
+    color: var(--neutral-0);
+    padding: var(--space-xxl) 0 var(--space-lg);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xxl);
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.footer-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--space-md);
+}
+
+.footer-address {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: var(--space-sm);
+}
+
+.footer-links a {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-100);
+}
+
+.footer-contacts {
+    list-style: none;
+}
+
+.footer-contacts li {
+    margin-bottom: var(--space-md);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-contacts a {
+    color: var(--neutral-0);
+    transition: color 0.25s ease;
+}
+
+.footer-contacts a:hover {
+    color: var(--primary-100);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-tagline {
+    margin-top: var(--space-xs);
+    color: var(--primary-100);
+}
+
+.footer-credit {
+    font-style: italic;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* Tablet (768px - 1279px) */
+@media (max-width: 1279px) {
+    .hero-title {
+        font-size: 45px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+    .hero {
+        min-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 40px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--neutral-0);
+        flex-direction: column;
+        padding: var(--space-md);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .nav.active {
+        display: flex;
+    }
+    
+    .burger {
+        display: flex;
+    }
+    
+    .header-contact {
+        display: none;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .stat-number {
+        font-size: 36px;
+    }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 479px) {
+    .hero-title {
+        font-size: 32px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .cta-title {
+        font-size: 32px;
+    }
+}
